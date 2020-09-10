@@ -7,13 +7,13 @@ just ports [his original work](https://docs.google.com/document/d/1LDew69b104krd
 Note there is also [a mapping](http://docs.opengeospatial.org/is/17-047r1/17-047r1.html#113) from this standard to the general [OGC Open Search EO GeoJSON
 Response](http://docs.opengeospatial.org/is/17-047r1/17-047r1.html).
 
-| **STAC Property**                                                                        |                   | **OGC 17-003r2 Property**                                                                                              |   |   |
-|------------------------------------------------------------------------------------------|-------------------|------------------------------------------------------------------------------------------------------------------------|---|---|
+| **STAC Property**                                                                        |                   | **OGC 17-003r2 Property**                                                                                             
+|------------------------------------------------------------------------------------------|-------------------|------------------------------------------------------------------------------------------------------------------------|
 | **[Item Fields](https://github.com/radiantearth/stac-spec/blob/master/item-spec/item-spec.md#item-fields)** |                   |                                                                                                                        |
 | id                                                                                       |                   | $.properties.identifier                                                                                                |
 | collection                                                                               |                   | $.properties.parentIdentifier                                                                                          |
 |                                                                                          |                   |                                                                                                                        |
-| | |
+|
 | https://github.com/radiantearth/stac-spec/tree/master/extensions/eo                      |                   |                                                                                                                        |
 | eo:cloud_cover                                                                           | number            | $.properties.productInformation.cloudCover                                                                             |
 | eo:bands                                                                                 | [Band Object]     |                                                                                                                        |

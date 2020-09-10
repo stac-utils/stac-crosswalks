@@ -13,7 +13,6 @@ Response](http://docs.opengeospatial.org/is/17-047r1/17-047r1.html).
 | id                                                                                       |                   | $.properties.identifier                                                                                                |
 | collection                                                                               |                   | $.properties.parentIdentifier                                                                                          |
 |                                                                                          |                   |                                                                                                                        |
-|
 | https://github.com/radiantearth/stac-spec/tree/master/extensions/eo                      |                   |                                                                                                                        |
 | eo:cloud_cover                                                                           | number            | $.properties.productInformation.cloudCover                                                                             |
 | eo:bands                                                                                 | [Band Object]     |                                                                                                                        |

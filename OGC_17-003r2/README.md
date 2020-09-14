@@ -35,3 +35,38 @@ Response](http://docs.opengeospatial.org/is/17-047r1/17-047r1.html).
 |  |                                                                  |
 | **[SAR Extension](https://github.com/radiantearth/stac-spec/blob/master/extensions/sar/README.md)**           |                   |                                                                                                                        |
 | sar:instrument_mode (M)                                                                  | string            | $..acquisitionParameters.operationalMode                                                                               |
+| sar:polarizations (M)                                                                  | [string]            |  $..acquisitionParameters.polarisationMode |
+|  sar:product_type (M)       |   string              |  $.properties.productInformation.productType   |
+|  sar:observation_direction  |     string            | $..acquisitionParameters.antennaLookDirection |
+|                                                                                          |                   |    
+| **[SAT Extension](https://github.com/radiantearth/stac-spec/blob/master/extensions/sat/README.md)** |                   |         |
+|  sat:orbit_state  |     string            | $.properties.acquisitionInformation[*].acquisitionParameters.orbitDirection |
+|  sat:relative_orbit |  integer | $..acquisitionParameters.relativeOrbitNumber |
+|                                                                                          |                   |    
+| **[Scientific Extension](https://github.com/radiantearth/stac-spec/blob/master/extensions/scientific/README.md)** |                   |         |
+|  sci:doi  |     string            | $.properties.doi |
+|                                                                                          |                   |    
+| **[Version Extension](https://github.com/radiantearth/stac-spec/tree/master/extensions/version)** |                   |         |
+|  version  |     string            | $properties.productInformation.version |
+|                                                                                          |                   |    
+| **[View Extension](https://github.com/radiantearth/stac-spec/tree/master/extensions/view)** |                   |         |
+|  view:off_nadir  |     number            | $..acquisitionAngles.instrumentElevationAngle  |
+|  view:incidence_angle  |     number            | $..acquisitionAngles.incidenceAngle  |
+|  view:azimuth  |     number            | $..acquisitionAngles.instrumentAzimuthAngle  |
+|  view:sun_azimuth  |     number            | $..acquisitionAngles.illuminationAzimuthAngle  |
+|  view:sun_elevation  |     number            | $..acquisitionAngles.illuminationElevationAngle  |
+|                                                                                          |                   |    
+| **[Projection Extension](https://github.com/radiantearth/stac-spec/tree/master/extensions/projection)** |                   |         |
+|  proj:epsg (M)  |     integer            | $.properties.productInformation.referenceSystemIdentifier |
+|                                                                                          |                   |    
+| **[Timestamps Extension](https://github.com/radiantearth/stac-spec/tree/master/extensions/timestamps)** |                   |         |
+|  published  |     string            | $.properties.published |
+|                                                                                          |                   |    
+| **[Landsat Extension](https://landsat.usgs.gov/stac/landsat-extension/schema.json)** |                   |         |
+|  landsat:wrs_path  |     string            | $..acquisitionParameters.wrsLongitudeGrid |
+|  landsat:wrs_row  |     string            | $..acquisitionParameters.wrsLatitudeGrid |
+|  landsat:scene_id  |     string            |  |
+
+
+
+

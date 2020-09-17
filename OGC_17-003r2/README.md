@@ -36,7 +36,7 @@ Response](http://docs.opengeospatial.org/is/17-047r1/17-047r1.html).
 |  |                                                                  |
 | **[SAR Extension](https://github.com/radiantearth/stac-spec/blob/master/extensions/sar/README.md)**           |                   |                                                                                                                        |
 | sar:instrument_mode (M)                                                                  | string            | $..acquisitionParameters.operationalMode                                                                               |
-| sar:polarizations (M)                                                                  | [string]            |  $..acquisitionParameters.polarisationMode |
+| sar:polarizations (M)                                                                  | [string]            |  $..acquisitionParameters.polarisationChannels |
 |  sar:product_type (M)       |   string              |  $.properties.productInformation.productType   |
 |  sar:observation_direction  |     string            | $..acquisitionParameters.antennaLookDirection |
 |                                                                                          |                   |    

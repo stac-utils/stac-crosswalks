@@ -18,7 +18,11 @@ Response](http://docs.opengeospatial.org/is/17-047r1/17-047r1.html).
 | description                                                                              | string            | $.properties.abstract (See OGC 17-084r1)                                                                               |
 | created                                                                                  | string            | $.properties.creationDate                                                                                              |
 | updated                                                                                 | string            | $.properties.updated (metadata)                                                                                                 |
+| links                                                                        | [Link Object]            | $.properties.links  |
 | assets.*.updated                                                                        | string            | $.properties.availabilityTime (data)  |
+| assets.* (role="data")                                                                   | Asset Object            | $.properties.links.data  |
+| assets.* (role="thumbnail")                                                               | Asset Object            | $.properties.links.previews  |
+| assets.* (role="metadata")                                                               | Asset Object            | $.properties.links.alternates  |
 | datetime                                                                                 | string \| null    | $.properties.date                                                                                                      |
 | start_datetime                                                                           | string            | $..acquisitionInformation[\*].acquisitionParameters.beginningDateTime                                                   
 | end_datetime                                                                             | string            | $..acquisitionInformation[\*].acquisitionParameters.endingDateTime                                                      

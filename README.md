@@ -16,6 +16,7 @@ with all its assets. Or if you've completed a mapping and would like it added he
 
 * DCAT-US [resources.data.gov/resources/dcat-us/](https://resources.data.gov/resources/dcat-us/)
 * ISO-19115
+* [OGC EO Collection Metadata GeoJSON (OGC 17-084r1)](https://docs.ogc.org/bp/17-084r1/17-084r1.html)
 
 ## Understanding Crosswalks
 

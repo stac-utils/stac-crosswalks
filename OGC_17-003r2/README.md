@@ -34,37 +34,37 @@ Response](http://docs.opengeospatial.org/is/17-047r1/17-047r1.html).
 | mission                                                                                  | string            |                                                                                                                        |
 | gsd                                                                                      | number            |                                                                                                                        |
 |                                                                                          |                   |                                                      
-| **[EO Extension](https://github.com/radiantearth/stac-spec/tree/master/extensions/eo)**                      |                   |                                                                                                                        |
+| **[EO Extension](https://github.com/stac-extensions/eo)**                      |                   |                                                                                                                        |
 | eo:cloud_cover                                                                           | number            | $.properties.productInformation.cloudCover                                                                             |
 | eo:bands                                                                                 | [Band Object]     |                                                                                                                        |
 |  |                                                                  |
-| **[SAR Extension](https://github.com/radiantearth/stac-spec/blob/master/extensions/sar/README.md)**           |                   |                                                                                                                        |
+| **[SAR Extension](https://github.com/stac-extensions/sar)**           |                   |                                                                                                                        |
 | sar:instrument_mode (M)                                                                  | string            | $..acquisitionParameters.operationalMode                                                                               |
 | sar:polarizations (M)                                                                  | [string]            |  $..acquisitionParameters.polarisationChannels |
 |  sar:product_type (M)       |   string              |  $.properties.productInformation.productType   |
 |  sar:observation_direction  |     string            | $..acquisitionParameters.antennaLookDirection |
 |                                                                                          |                   |    
-| **[SAT Extension](https://github.com/radiantearth/stac-spec/blob/master/extensions/sat/README.md)** |                   |         |
+| **[SAT Extension](https://github.com/stac-extensions/sat)** |                   |         |
 |  sat:orbit_state  |     string            | $.properties.acquisitionInformation[*].acquisitionParameters.orbitDirection |
 |  sat:relative_orbit |  integer | $..acquisitionParameters.relativeOrbitNumber |
 |                                                                                          |                   |    
-| **[Scientific Extension](https://github.com/radiantearth/stac-spec/blob/master/extensions/scientific/README.md)** |                   |         |
+| **[Scientific Extension](https://github.com/stac-extensions/scientific)** |                   |         |
 |  sci:doi  |     string            | $.properties.doi |
 |                                                                                          |                   |    
-| **[Version Extension](https://github.com/radiantearth/stac-spec/tree/master/extensions/version)** |                   |         |
+| **[Version Extension](https://github.com/stac-extensions/version)** |                   |         |
 |  version  |     string            | $properties.productInformation.version |
 |                                                                                          |                   |    
-| **[View Extension](https://github.com/radiantearth/stac-spec/tree/master/extensions/view)** |                   |         |
+| **[View Extension](https://github.com/stac-extensions/view)** |                   |         |
 |  view:off_nadir  |     number            | $..acquisitionAngles.instrumentElevationAngle  |
 |  view:incidence_angle  |     number            | $..acquisitionAngles.incidenceAngle  |
 |  view:azimuth  |     number            | $..acquisitionAngles.instrumentAzimuthAngle  |
 |  view:sun_azimuth  |     number            | $..acquisitionAngles.illuminationAzimuthAngle  |
 |  view:sun_elevation  |     number            | $..acquisitionAngles.illuminationElevationAngle  |
 |                                                                                          |                   |    
-| **[Projection Extension](https://github.com/radiantearth/stac-spec/tree/master/extensions/projection)** |                   |         |
+| **[Projection Extension](https://github.com/stac-extensions/projection)** |                   |         |
 |  proj:epsg (M)  |     integer            | $.properties.productInformation.referenceSystemIdentifier |
 |                                                                                          |                   |    
-| **[Timestamps Extension](https://github.com/radiantearth/stac-spec/tree/master/extensions/timestamps)** |                   |         |
+| **[Timestamps Extension](https://github.com/stac-extensions/timestamps)** |                   |         |
 |  published  |     string            | $.properties.published |
 |                                                                                          |                   |    
 | **[Landsat Extension](https://landsat.usgs.gov/stac/landsat-extension/schema.json)** |                   |         |

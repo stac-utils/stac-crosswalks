@@ -71,6 +71,10 @@ Response](http://docs.opengeospatial.org/is/17-047r1/17-047r1.html).
 |  landsat:wrs_path  |     string            | $..acquisitionParameters.wrsLongitudeGrid |
 |  landsat:wrs_row  |     string            | $..acquisitionParameters.wrsLatitudeGrid |
 |  landsat:scene_id  |     string            |  |
+| **[Processing Extension](https://github.com/stac-extensions/processing)** |                   |         |
+|  processing:level  |     string            | $..productInformation.processingLevel |
+|  processing:facility  |     string            | $..productInformation.processingCenter |
+|  processing:software  |     string            | $..productInformation.processorName |
 
 
 

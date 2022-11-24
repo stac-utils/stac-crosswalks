@@ -50,6 +50,7 @@ Response](http://docs.opengeospatial.org/is/17-047r1/17-047r1.html).
 |                                                                                          |                   |    
 | **[Scientific Extension](https://github.com/stac-extensions/scientific)** |                   |         |
 |  sci:doi  |     string            | $.properties.doi |
+|  sci:citation  |     string            | $.properties.bibliographicCitation (OGC 17-084r1) |
 |                                                                                          |                   |    
 | **[Version Extension](https://github.com/stac-extensions/version)** |                   |         |
 |  version  |     string            | $properties.productInformation.version |

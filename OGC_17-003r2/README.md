@@ -74,7 +74,7 @@ Response](http://docs.opengeospatial.org/is/17-047r1/17-047r1.html).
 | **[Processing Extension](https://github.com/stac-extensions/processing)** |                   |         |
 |  processing:level  |     string            | $..productInformation.processingLevel |
 |  processing:facility  |     string            | $..productInformation.processingCenter |
-|  processing:software  |     Map<string, string>            | $..productInformation.processorName |
+|  processing:software  |     Map<string, string>            | $..productInformation.processorName $..productInformation.processorVersion |
 
 
 

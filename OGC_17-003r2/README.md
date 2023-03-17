@@ -83,6 +83,13 @@ Response](http://docs.opengeospatial.org/is/17-047r1/17-047r1.html).
 | **[Hyperspectral Extension](https://github.com/stac-extensions/hsi)** |                   |         |
 |  hsi:wavelength_min  |     [number]            | $..wavelengths[*].startWavelength |
 |  hsi:wavelength_max  |     [number]            | $..wavelengths[*].endWavelength |
+|                                                                                          |                   |    
+| **[TBD Offering Extension](https://github.com/stac-extensions/web-map-links/issues/8)** |               |         |
+|  $.links[*].rel  |     string (uri)           | $..offerings[\*].code |
+|  $.links[*].rel  |     string            | $..offerings[\*].operations[\*].code |
+|  $.links[*].method  |     string            | $..offerings[\*].operations[\*].method |
+|  $.links[*].type  |     string            | $..offerings[\*].operations[\*].type |
+|  $.links[*].href  |     string (uri)           | $..offerings[\*].operations[\*].href |
 
 
 

@@ -215,3 +215,9 @@ OAR1 defines similar ways to search for resources:
 - [**Local Resource Catalogue**](https://docs.ogc.org/DRAFTS/20-004.html#clause-local-resources-catalogue): Search for record collections via `GET /collections`
 - **Record Search**: A global search for records is planned in the requirement class [Searchable Catalogue](https://docs.ogc.org/DRAFTS/20-004.html#clause-searchable-catalogue), but it's not fully defined yet. There are [chances for incompatibilities with STAC](https://github.com/opengeospatial/ogcapi-features/issues/832).
 - **Records per Record Collection**: Filter for records in a specific record collection via `GET /collections/{collectionId}/items`  (see [Item List](#item-list))
+
+### Datacubes
+
+OAR1 doesn't prescribes how to provide metadata about datacubes. OGC in general has a couple of related standards, e.g. Coverages and Geodatacube API, but the relation with OAR1 is not clearly defined for any of them.
+
+STAC doesn't provide it either in the core, but it has a [datacube extension](https://github.com/stac-extensions/datacube).

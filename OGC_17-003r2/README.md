@@ -36,7 +36,8 @@ Response](http://docs.opengeospatial.org/is/17-047r1/17-047r1.html).
 | gsd                                                                                      | number            |                                                                                                                        |
 |                                                                                          |                   |                                                      
 | **[EO Extension](https://github.com/stac-extensions/eo)**                      |                   |                                                                                                                        |
-| eo:cloud_cover                                                                           | number            | $.properties.productInformation.cloudCover                                                                             |
+| eo:cloud_cover                                                                           | number            | $.properties.productInformation.cloudCover 
+| eo:snow_cover                                                                           | number            | $.properties.productInformation.snowCover |
 | eo:bands                                                                                 | [Band Object]     |                                                                                                                        |
 |  |                                                                  |
 | **[SAR Extension](https://github.com/stac-extensions/sar)**           |                   |                                                                                                                        |

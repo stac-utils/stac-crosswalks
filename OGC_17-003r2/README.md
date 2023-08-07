@@ -36,7 +36,8 @@ Response](http://docs.opengeospatial.org/is/17-047r1/17-047r1.html).
 | gsd                                                                                      | number            |                                                                                                                        |
 |                                                                                          |                   |                                                      
 | **[EO Extension](https://github.com/stac-extensions/eo)**                      |                   |                                                                                                                        |
-| eo:cloud_cover                                                                           | number            | $.properties.productInformation.cloudCover                                                                             |
+| eo:cloud_cover                                                                           | number            | $.properties.productInformation.cloudCover 
+| eo:snow_cover                                                                           | number            | $.properties.productInformation.snowCover |
 | eo:bands                                                                                 | [Band Object]     |                                                                                                                        |
 |  |                                                                  |
 | **[SAR Extension](https://github.com/stac-extensions/sar)**           |                   |                                                                                                                        |
@@ -47,6 +48,8 @@ Response](http://docs.opengeospatial.org/is/17-047r1/17-047r1.html).
 |                                                                                          |                   |    
 | **[SAT Extension](https://github.com/stac-extensions/sat)** |                   |         |
 |  sat:orbit_state  |     string            | $.properties.acquisitionInformation[*].acquisitionParameters.orbitDirection |
+|  sat:absolute_orbit  |     integer            | $.properties.acquisitionInformation[*].acquisitionParameters.orbitNumber |
+|  sat:anx_datetime  |     string            | $.properties.acquisitionInformation[*].acquisitionParameters.ascendingNodeDate |
 |  sat:relative_orbit |  integer | $..acquisitionParameters.relativeOrbitNumber |
 |                                                                                          |                   |    
 | **[Scientific Extension](https://github.com/stac-extensions/scientific)** |                   |         |
@@ -68,6 +71,7 @@ Response](http://docs.opengeospatial.org/is/17-047r1/17-047r1.html).
 |                                                                                          |                   |    
 | **[Timestamps Extension](https://github.com/stac-extensions/timestamps)** |                   |         |
 |  published  |     string            | $.properties.published |
+|  expires  |     string            | $.properties.available |
 |                                                                                          |                   |    
 | **[Landsat Extension](https://landsat.usgs.gov/stac/landsat-extension/schema.json)** |                   |         |
 |  landsat:wrs_path  |     string            | $..acquisitionParameters.wrsLongitudeGrid |
@@ -85,11 +89,11 @@ Response](http://docs.opengeospatial.org/is/17-047r1/17-047r1.html).
 |  hsi:wavelength_max  |     [number]            | $..wavelengths[*].endWavelength |
 |                                                                                          |                   |    
 | **[TBD Offering Extension](https://github.com/stac-extensions/web-map-links/issues/8)** |               |         |
-|  $.links[*].rel  |     string (uri)           | $..offerings[\*].code |
-|  $.links[*].rel  |     string            | $..offerings[\*].operations[\*].code |
-|  $.links[*].method  |     string            | $..offerings[\*].operations[\*].method |
-|  $.links[*].type  |     string            | $..offerings[\*].operations[\*].type |
-|  $.links[*].href  |     string (uri)           | $..offerings[\*].operations[\*].href |
+|  $.assets.\*.roles  |     [string (uri)]           | $..offerings[\*].code.    |
+|    |                 | $..offerings[\*].operations[\*].code |
+|  $.assets.*.method  |     string            | $..offerings[\*].operations[\*].method |
+|  $.assets.*.type  |     string            | $..offerings[\*].operations[\*].type |
+|  $.assets.*.href  |     string (uri)           | $..offerings[\*].operations[\*].href |
 
 
 

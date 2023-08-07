@@ -20,18 +20,18 @@ You could map the different entities specified in STAC and OAR1 as follows:
 
 | STAC       | OAR1              |
 | ---------- | ----------------- |
-| Catalog    | Folder            |
+| Catalog    | Record Collection |
 | Collection | Record Collection |
 | Item       | Record            |
 
 Nevertheless, you could also think about other mappings between the specifications. Some may argue, a STAC Collection is a OAR1 Record. Due to the way the JSON representations are defined, I'm assuming a mapping as in the table above though.
 
-Please also note that Catalogs, Collections and Items could be Records in OAR1 and some implementations only convert Records to Record Collections once they have at least one child record. Folders/Catalogs are currently mostly used in static deployments and don't play a huge role in APIs/dynamic deployments.
+Please also note that Catalogs, Collections and Items could be Records in OAR1 and some implementations only convert Records to Record Collections once they have at least one child record. Catalogs are currently mostly used in static deployments and don't play a huge role in APIs/dynamic deployments.
 
 ## Static (content)
 
 - The content model and static catalog behavior for STAC is specified in the standalone STAC specification and corresponding extensions.
-- The content model and static catalog behavior for OAR1 is specified in the requirement classes "Record Core", "Record Collection", "Folder" (still in a PR) and "Crawlable Catalogue".
+- The content model and static catalog behavior for OAR1 is specified in the requirement classes "Record Core", "Record Collection" and "Crawlable Catalogue".
 
 ***Note:*** In the tables below, the following applies:
 - **bold** properties indicate that they are required.
@@ -45,21 +45,17 @@ Please also note that Catalogs, Collections and Items could be Records in OAR1 a
 
 Assuming a JSON (non-GeoJSON) encoding.
 
-| STAC                       | OAR1                | Profile*                                                     | Compatible / Comments                                        |
-| -------------------------- | ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| **type** = `Catalog`       | **type** = `Folder` | ❌ [Issue](https://github.com/opengeospatial/ogcapi-records/issues/264) | ❌ OAR1 and STAC are currently in conflict                    |
-| **stac_version**           | -                   | ✅                                                            | ⚠️                                                            |
-| stac_extensions            | -                   | ✅                                                            | ✅                                                            |
-| **id**                     | **id**              | ✅                                                            | ✅                                                            |
-| title                      | title               | ✅                                                            | ✅                                                            |
-| **description**            | description         | ✅                                                            | ⚠️ STAC disallows empty strings                               |
-| **links**                  | **links**           | ⚠️ [Issue 1](https://github.com/opengeospatial/ogcapi-records/issues/276) [Issue 2](https://github.com/opengeospatial/ogcapi-records/issues/275) [Issue 3](https://github.com/radiantearth/stac-spec/issues/1235) | ⚠️ Structure is compatible except for templated links and different relation type requirements (none in STAC; `self` in OAR1). Also, OAR1 and STAC both use the relation type `child` with a media type `application/json` to link to catalogs, but **clients can't distinguish whether they can expect OAR1 or STAC**. |
-| keywords (common metadata) | keywords            | ✅                                                            | ✅                                                            |
-| language (extension)       | language            | ✅                                                            | ✅                                                            |
-| languages (extension)      | languages           | ✅                                                            | ✅                                                            |
-| created (common metadata)  | created             | ✅                                                            | ✅                                                            |
-| updated (common metadata)  | updated             | ✅                                                            | ✅                                                            |
-| -                          | extent              | ✅                                                            | ⚠️ Generally aligned, but some legacy STAC tooling may detect STAC Collections based on the fields that are present. This was previously sometimes done by checking the existence of the `extent` field, so some legacy STAC tooling may detect OAR Catalogs as STAC Collections. |
+| STAC                 | OAR1                    | Profile*                                                     | Compatible / Comments                                        |
+| -------------------- | ----------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| **type** = `Catalog` | **type** = `Collection` | ⚠️ [Issue](https://github.com/opengeospatial/ogcapi-records/issues/264) | ⚠️ There is no Catalog in OAR1, you can use a "lightweight" Collection instead. |
+| **stac_version**     | -                       | ✅                                                            | ⚠️                                                            |
+| stac_extensions      | -                       | ✅                                                            | ✅                                                            |
+| **id**               | **id**                  | ✅                                                            | ✅                                                            |
+| title                | **title**               | ⚠️ [Issue](https://github.com/radiantearth/stac-spec/issues/1232) | ⚠️ Potentially require in STAC?                               |
+| **description**      | **description**         | ✅                                                            | ⚠️ STAC disallows empty strings                               |
+| **links**            | **links**               | ⚠️ [Issue 1](https://github.com/opengeospatial/ogcapi-records/issues/276) [Issue 2](https://github.com/opengeospatial/ogcapi-records/issues/275) [Issue 3](https://github.com/radiantearth/stac-spec/issues/1235) | ⚠️ Structure is compatible except for templated links and different relation type requirements (none in STAC; `self` in OAR1). Also, OAR1 and STAC both use the relation type `child` with a media type `application/json` to link to catalogs, but **clients can't distinguish whether they can expect OAR1 or STAC**. |
+
+See below for more details about Collections.
 
 ### Collections
 

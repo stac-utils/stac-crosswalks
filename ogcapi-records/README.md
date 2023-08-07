@@ -12,7 +12,7 @@ This document will compare content model (STAC vs. OAR1) and the API specificati
 
 Unfortunately, STAC and OGC API - Records are not fully compliant.
 It means that by default a STAC API is not automatically a OGC API - Records and vice versa.
-Nevertheless, there are no major conflicts in the specification (except for catalogs) so that both implementations can be made compliant with a relatively small number of additions.
+Nevertheless, there are no major conflicts in the specification so that both implementations can be made compliant with a relatively small number of additions.
 
 ### Terminology
 

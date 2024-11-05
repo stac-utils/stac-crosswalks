@@ -1,7 +1,7 @@
 # Crosswalk between STAC and OGC API - Records
 
 This document gives a brief overview over similarities and differences between
-- **STAC (API), v1.0.0** (+ extensions)
+- **STAC (API), v1.1.0** (+ extensions)
 - **OGC API - Records - Part 1: Core, [draft version](http://docs.ogc.org/DRAFTS/20-004.html) (2023-05-26)**
 
 In the following I use **OAR1** as an abbreviation for **OGC API - Records - Part 1**.
@@ -72,7 +72,7 @@ Assuming a JSON (non-GeoJSON) encoding.
 | **description**           | description                         | ✅                                                            | ⚠️ STAC disallows empty strings                               |
 | **links**                 | **links**                           | ⚠️ [Issue 1](https://github.com/opengeospatial/ogcapi-records/issues/276) [Issue 2](https://github.com/opengeospatial/ogcapi-records/issues/275) [Issue 3](https://github.com/radiantearth/stac-spec/issues/1235) | ⚠️ Structure is compatible except for templated links, but different relation type requirements (none in STAC; `self` and `root` in OAR1). Also, OAR1 and STAC both use the relation type `child` with a media type `application/json` to link to collections, but **clients can't distinguish whether they can expect OAR1 or STAC**. |
 | keywords                  | keywords                            | ✅                                                            | ✅                                                            |
-| **license**               | license                             | ✅ (STAC 1.1+)                                                | ⚠ STAC 1.0 is not fully compatible, but STAC 1.1 will be made compatible. |
+| **license**               | license                             | ✅ (STAC 1.1+)                                                | ⚠ STAC 1.0 is not fully compatible, but STAC 1.1 is compatible except for two deprecated values in STAC. |
 | providers                 | -                                   | ✅                                                            | ✅                                                            |
 | contacts (extension)      | contacts                            | ✅                                                            | ✅                                                            |
 | **extent**                | extent                              | ✅                                                            | ⚠️ STAC requires a bounding box and a temporal interval.      |
@@ -116,7 +116,7 @@ Assuming a GeoJSON encoding for Records.
 | title (common metadata)                      | **title**         | ⚠️ [Issue](https://github.com/radiantearth/stac-spec/issues/1232) | ⚠️                                                            |
 | description (common metadata)                | description       | ✅                                                            | ⚠️ STAC disallows empty strings                               |
 | keywords (common metadata)                   | keywords          | ✅                                                            | ✅                                                            |
-| license (common metadata)                    | license           | ✅ (STAC 1.1+)                                                | ⚠️ STAC 1.0 is not fully compatible, but STAC 1.1 will be made compatible. |
+| license (common metadata)                    | license           | ✅ (STAC 1.1+)                                                | ⚠ STAC 1.0 is not fully compatible, but STAC 1.1 is compatible except for two deprecated values in STAC. |
 | created (common metadata)                    | created           | ✅                                                            | ✅                                                            |
 | updated (common metadata)                    | updated           | ✅                                                            | ✅                                                            |
 | contacts (extension)                         | contacts          | ✅                                                            | ✅                                                            |

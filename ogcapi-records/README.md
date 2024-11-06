@@ -51,8 +51,8 @@ Assuming a JSON (non-GeoJSON) encoding.
 | **stac_version**     | -                       | ✅                                                            | ⚠️                                                            |
 | stac_extensions      | -                       | ✅                                                            | ✅                                                            |
 | **id**               | **id**                  | ✅                                                            | ✅                                                            |
-| title                | **title**               | ⚠️ [Issue](https://github.com/radiantearth/stac-spec/issues/1232) | ⚠️                                |
-| **description**      | **description**         | ✅                                                            | ⚠️ STAC disallows empty strings                               |
+| title                | title                   | ✅                                                            | ✅                                                            |
+| **description**      | description             | ✅                                                            | ⚠️ STAC disallows empty strings                               |
 | **links**            | **links**               | ⚠️ [Issue 1](https://github.com/opengeospatial/ogcapi-records/issues/276) [Issue 2](https://github.com/opengeospatial/ogcapi-records/issues/275) [Issue 3](https://github.com/radiantearth/stac-spec/issues/1235) | ⚠️ Structure is compatible except for templated links and different relation type requirements (none in STAC; `self` in OAR1). Also, OAR1 and STAC both use the relation type `child` with a media type `application/json` to link to catalogs, but **clients can't distinguish whether they can expect OAR1 or STAC**. |
 
 See below for more details about Collections.
@@ -68,7 +68,7 @@ Assuming a JSON (non-GeoJSON) encoding.
 | **stac_version**          | -                                   | ✅                                                            | ⚠️                                                            |
 | stac_extensions           | conformsTo (tbc)                    | ✅                                                            | ⚠️ STAC extensions could be used in `conformsTo`, but conformance classes that are not valid JSON schemas can't be used in `stac_extensions`. |
 | **id**                    | **id**                              | ✅                                                            | ✅                                                            |
-| title                     | **title**                           | ⚠️ [Issue](https://github.com/radiantearth/stac-spec/issues/1232) | ⚠️                                                            |
+| title                     | title                               | ✅                                                            | ✅                                                            |
 | **description**           | description                         | ✅                                                            | ⚠️ STAC disallows empty strings                               |
 | **links**                 | **links**                           | ⚠️ [Issue 1](https://github.com/opengeospatial/ogcapi-records/issues/276) [Issue 2](https://github.com/opengeospatial/ogcapi-records/issues/275) [Issue 3](https://github.com/radiantearth/stac-spec/issues/1235) | ⚠️ Structure is compatible except for templated links, but different relation type requirements (none in STAC; `self` and `root` in OAR1). Also, OAR1 and STAC both use the relation type `child` with a media type `application/json` to link to collections, but **clients can't distinguish whether they can expect OAR1 or STAC**. |
 | keywords                  | keywords                            | ✅                                                            | ✅                                                            |
@@ -113,7 +113,7 @@ Assuming a GeoJSON encoding for Records.
 | -------------------------------------------- | ----------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | -                                            | **type**          | ⚠️ [Issue](https://github.com/radiantearth/stac-spec/issues/1232) | ⚠️                                                            |
 | **datetime** / start_datetime / end_datetime | -                 | ⚠️ [Issue 1](https://github.com/opengeospatial/ogcapi-records/issues/277) [Issue 2](https://github.com/radiantearth/stac-spec/issues/1232) | ⚠️ OAR1: `time` in the top-level object                       |
-| title (common metadata)                      | **title**         | ⚠️ [Issue](https://github.com/radiantearth/stac-spec/issues/1232) | ⚠️                                                            |
+| title (common metadata)                      | title             | ✅                                                            | ⚠️                                                            |
 | description (common metadata)                | description       | ✅                                                            | ⚠️ STAC disallows empty strings                               |
 | keywords (common metadata)                   | keywords          | ✅                                                            | ✅                                                            |
 | license (common metadata)                    | license           | ✅ (STAC 1.1+)                                                | ⚠ STAC 1.0 is not fully compatible, but STAC 1.1 is compatible except for two deprecated values in STAC. |

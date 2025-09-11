@@ -40,10 +40,14 @@ Response](http://docs.opengeospatial.org/is/17-047r1/17-047r1.html).
 | eo:snow_cover                                                                           | number            | $.properties.productInformation.snowCover |
 | eo:bands                                                                                 | [Band Object]     |                                                                                                                        |
 |  |                                                                  |
+| **[Product Extension](https://github.com/stac-extensions/product)**                      |                   |  
+|  product:type      |   string              |  $.properties.productInformation.productType   |
+|  product:timeliness_category     |   string              |  $.properties.productInformation.timeliness   |
+|  product:acquisition_type     |   string              |  $..acquisitionParameters.acquisitionType   |
+|  |                                                                  |
 | **[SAR Extension](https://github.com/stac-extensions/sar)**           |                   |                                                                                                                        |
 | sar:instrument_mode (M)                                                                  | string            | $..acquisitionParameters.operationalMode                                                                               |
 | sar:polarizations (M)                                                                  | [string]            |  $..acquisitionParameters.polarisationChannels |
-|  sar:product_type (M)       |   string              |  $.properties.productInformation.productType   |
 |  sar:observation_direction  |     string            | $..acquisitionParameters.antennaLookDirection |
 |                                                                                          |                   |    
 | **[SAT Extension](https://github.com/stac-extensions/sat)** |                   |         |

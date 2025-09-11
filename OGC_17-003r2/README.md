@@ -91,6 +91,7 @@ Response](http://docs.opengeospatial.org/is/17-047r1/17-047r1.html).
 |  processing:facility  |     string            | $..productInformation.processingCenter |
 |  processing:software  |     Map<string, string>            | $..productInformation.processorName  |
 |  processing:software  |     Map<string, string>            | $..productInformation.processorVersion |
+|  processing:datetime  |     string            | $.properties.productInformation.processingDate |
 |                                                                                          |                   |    
 | **[Hyperspectral Extension](https://github.com/stac-extensions/hsi)** |                   |         |
 |  hsi:wavelength_min  |     [number]            | $..wavelengths[*].startWavelength |

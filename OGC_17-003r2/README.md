@@ -77,6 +77,10 @@ Response](http://docs.opengeospatial.org/is/17-047r1/17-047r1.html).
 |  published  |     string            | $.properties.published |
 |  expires  |     string            | $.properties.available |
 |                                                                                          |                   |    
+| **[Grid Extension](https://github.com/stac-extensions/grid)** |                   |         |
+|  grid:code  |     string            | $..acquisitionParameters.wrsLongitudeGrid |
+|  grid:code  |     string            | $..acquisitionParameters.wrsLatitudeGrid |
+|                                                                                          |                   |    
 | **[Landsat Extension](https://landsat.usgs.gov/stac/landsat-extension/schema.json)** |                   |         |
 |  landsat:wrs_path  |     string            | $..acquisitionParameters.wrsLongitudeGrid |
 |  landsat:wrs_row  |     string            | $..acquisitionParameters.wrsLatitudeGrid |

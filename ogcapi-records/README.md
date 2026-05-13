@@ -130,7 +130,7 @@ Assuming a GeoJSON encoding for Records.
 | language (extension)                         | language          | ✅                                                            | ✅                                                            |
 | languages (extension)                        | languages         | ✅                                                            | ✅                                                            |
 | -                                            | resourceLanguages | ✅                                                            | ✅                                                            |
-| -                                            | externalIds       | ✅                                                            | ✅                                                            |
+| externalIds (extension)                      | externalIds       | ✅                                                            | ✅                                                            |
 | -                                            | rights            | ✅                                                            | ✅                                                            |
 | -                                            | formats           | ✅                                                            | ✅ STAC: A similar list can be obtained from the `type` field in assets |
 

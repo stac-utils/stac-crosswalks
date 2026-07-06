@@ -55,6 +55,7 @@ Response](http://docs.opengeospatial.org/is/17-047r1/17-047r1.html).
 |  sat:absolute_orbit  |     integer            | $.properties.acquisitionInformation[*].acquisitionParameters.orbitNumber |
 |  sat:anx_datetime  |     string            | $.properties.acquisitionInformation[*].acquisitionParameters.ascendingNodeDate |
 |  sat:relative_orbit |  integer | $..acquisitionParameters.relativeOrbitNumber |
+|  sat:acquisition_station |  string | $..acquisitionParameters.acquisitionStation |
 |                                                                                          |                   |    
 | **[Scientific Extension](https://github.com/stac-extensions/scientific)** |                   |         |
 |  sci:doi  |     string            | $.properties.doi |
